@@ -326,40 +326,52 @@
                 </div>
             </div>
 
-            <!-- Contact Form -->
-            <div class="row mt-5">
-                <div class="col-lg-8 mx-auto">
-                    <h4 class="mb-4">Send me a Message</h4>
-                    <form id="contactForm" class="contact-form">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="name" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
-                                <small class="text-danger d-none" id="nameError">Please enter your name</small>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
-                                <small class="text-danger d-none" id="emailError">Please enter a valid email</small>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" class="form-control" id="subject" name="subject" required>
-                            <small class="text-danger d-none" id="subjectError">Please enter a subject</small>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                            <small class="text-danger d-none" id="messageError">Please enter your message</small>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
-                        <div id="formMessage" class="alert mt-3 d-none"></div>
-                    </form>
+<!-- Contact Form -->
+<div class="row mt-5">
+    <div class="col-lg-8 mx-auto">
+        <h4 class="mb-4">Send me a Message</h4>
+
+        <form id="contactForm" class="contact-form"
+              action="https://formspree.io/f/xojkyvwo"
+              method="POST">
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                    <small class="text-danger d-none" id="nameError">Please enter your name</small>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    <small class="text-danger d-none" id="emailError">Please enter a valid email</small>
                 </div>
             </div>
+
+            <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="subject" name="subject" required>
+                <small class="text-danger d-none" id="subjectError">Please enter a subject</small>
+            </div>
+
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                <small class="text-danger d-none" id="messageError">Please enter your message</small>
+             </div>
+
+             <!-- Optional hidden field for better email subject -->
+             <input type="hidden" name="_subject" value="New Portfolio Message">
+
+             <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+
+             <div id="formMessage" class="alert mt-3 d-none"></div>
+            </form>
+          </div>
         </div>
-    </section>
+      </div>
+  </section>
 
     <!-- 10. SOCIAL LINKS SECTION -->
     <section class="social-links-section py-4 bg-dark text-white">
