@@ -33,8 +33,7 @@ const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        
+
         // Get form values
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
@@ -44,7 +43,6 @@ if (contactForm) {
         // Reset error messages
         clearErrorMessages();
         
-        // Validation
         let isValid = true;
         
         if (name === '') {
@@ -70,19 +68,21 @@ if (contactForm) {
             showError('messageError');
             isValid = false;
         }
-        
-        // If all valid, show success message and reset form
-        if (isValid) {
-            showFormMessage('Thank you! Your message has been sent successfully. I will get back to you soon!', 'success');
-            contactForm.reset();
-            
-            // Optional: Clear success message after 5 seconds
+
+        if (!isValid) {
+            e.preventDefault(); // only stop if invalid
+        } else {
+            // Let Formspree submit normally
+
+            showFormMessage(
+                'Thank you! Your message has been sent successfully. I will get back to you soon!',
+                'success'
+            );
+
+            // Optional: clear form AFTER small delay (so submission happens)
             setTimeout(() => {
-                const formMessage = document.getElementById('formMessage');
-                if (formMessage) {
-                    formMessage.classList.add('d-none');
-                }
-            }, 5000);
+                contactForm.reset();
+            }, 500);
         }
     });
 }
