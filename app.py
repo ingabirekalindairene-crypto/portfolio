@@ -497,7 +497,6 @@ def init_db():
         db.session.commit()
         print("Database initialized with sample data!")
 
-if __name__ == '__main__':
     with app.app_context():
         try:
             db.create_all()
